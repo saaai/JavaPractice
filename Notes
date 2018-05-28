@@ -1,0 +1,1190 @@
+Notes: EGIANTS VIDEOS
+
+-> properties of class objects, instance variables, methods.
+
+-> while compiling the program if there are any errors its callled compile time error.
+
+-> while running/executing the program if there are any errors its called run time error.
+
+-> if there arent any local variables to excute then the mehtod will 
+look for excuting them through instance variables(which are declared in the class level) 
+ if there are any declared in the class.
+
+-> when we get an exception the other statements wont be excuted,
+	 the program terminates as the exception occurs.
+
+-> "this" is the keyword used to refer to the current object instance variable
+ ex:
+ class constructordemo{
+ 	int a;//instance variables
+ 	int b;//instance variables
+
+ 	ConstructorDemo(int a, int b)
+ 	{
+ 		this.a =a;//by using this.a we can refere the instance variable "a" to the local variable "a"
+ 		this.b =b;//by using this.a we can refere the instance variable "b" to the local variable "b"
+ 	}
+ }
+____________________________________________________________________________________________________________________
+
+NOV 21st video
+
+- class path is nothing but from where the class is excuting, from the folder where the class file is stored
+
+jar - java archive file -> it contains classes 
+ 
+- the defautl package for java is java.lang
+
+- String class and System class these belong to java.lang package
+
+ex: public static void main(String args[])
+ex: System.out.println("");
+
+- java pakcages is nothing but a folder with the contents classes and sub packages .
+
+- a class can be an exception, enum, interface, ERRORS also and normal class we create
+
+IN SYSTEM.OUT.PRINTLN("");
+
+- out and print isnt not only for output devices and printing and monitoring.
+
+- System.out - here we use the class name to access this variable 
+  when we are using the dot operator it means a STATIC VARIABLE
+
+- OUT is inside SYSTEM and PRINTLN is inside OUT.
+
+- OUT is an object of print stream.
+
+- PRINTLN is a method taken from printstream class, printstream is a functionality it can be embedded with output stream,
+ output stream can be a file or a monitor
+
+- there are different different println methods to display 
+different data types like, boolean, char[], double, float, int, long, object, String
+
+- we are calling println from the static method .
+
+- to call the method first give classname.methodname,
+   parseInt is an method in the integer class in java api documents 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+NOV 22nd Video:
+___________________________________________________________
+
+CONSTRUCTORS:
+
+-> Syntax for creating the constructor
+classname(0 - n no. of parameters)
+{
+
+}
+
+-> in every constructor by default there will be a super(); 
+	which means its a call to execute the super class default constructor.
+
+-> Syntax for calling the constructor
+classname variable = new constructorname();
+
+-> eventhough u mention the word super or not its doesnt matter,
+	the contructor always by default takes the super(); 
+	keyword in the first line of constructor.
+
+->theres no return type for Constructors
+->constructor name should be the class name only 
+
+-> a constructor with zero  arguments is called as deafult constructor,
+	why beacuse even if we don't create a constructor,
+	 by default jvm will create an default constructor like this for us.
+
+->Constructor should be created outside the method ie..below or above the main method/right after the class name
+->to excute an constructor u need to create an object , 
+ if we create an object it will be excuted internally automatically.
+
+-> if we are not passing constructor the jvm will pass the default constructor.
+
+->we can call the constructor using the object only once.
+
+->if we provide any constructor jvm wont provide the default constructor if we dont proivde the constructor the jvm will provide the constructor.
+
+-> technically u cant call multiple consturctor at a time .
+
+-> to call multiple constructors at a time create multiple objects.
+
+->creating of unnecesssary objects is invalid 
+
+why exactly we need the constructor?
+->
+"this" is the keyword used to refer to the current object instance variable
+ 
+ ex:
+ class constructordemo{
+ 	int a;//instance variables
+ 	int b;//instance variables
+
+ 	ConstructorDemo(int a, int b)
+ 	{
+ 		super();
+ 		this.a =a;//by using this.a we can refere the instance variable "a" to the local variable "a"
+ 		//left side "a" is the instance variable and the right side "a" variable is the local variable
+ 		this.b =b;//by using this.a we can refere the instance variable "b" to the local variable "b"
+ 		//left side "b" is the instance variable and the right side "b" variable is the local variable
+ 	}
+ }
+
+
+Dynamic Input:
+
+- is the interactive programming input from the user.
+- we need to caputre the input stream first.
+- InputStream ie..file input stream, keyboard
+deafult InputStream: System.in 
+ 
+ InputStreamReader isr = new InputStreamReader(System.in);
+ BufferedReader reader = new BufferedReader(isr);
+ System.out.println("please enter a value:");
+		String msg = reader.readLine();
+		System.out.println(msg);
+
+- InputStreamReader
+
+- BufferedReader
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+NOV 25th videos:
+
+
+THROWS IOEXCEPTION:
+
+happy path: means running the program without any exception and without any failure test classes
+
+-- WE NEED IOEXCEPTIONS WHENEVER WE USE AN READLINE() METHOD.
+
+-- if we try to convert the abc string to integer it throws an error , 
+	this is at run time its called exception.
+
+-- when we gets the exception we need to handle the exception, we need to hide the exception message 
+	and display the customized message.
+
+-- to handle the messages properly we use EXCEPTIONAL HANDLING.
+-- the entire main method is the scope of the code, the exception can happen anywhere in the main method.
+-- in a single program 
+	we can write only one try block and 
+		any no. of catch blocks, 
+		only one finally block if its existing and if it doesnt exists zero finally blocks.
+
+-- is writing a catch block necessary when we write a try block?
+-- writing try block alone will not work should write atleast finally block or catch block also !!!
+
+-> throws is different from throw
+
+-> throw means raising the exception manually in the program
+
+-- let us assume :
+	try 				batsman
+	catch				fielders
+	finally 			result
+
+	throws IOEXCEPTIONS - we are discussing now!!!
+
+	throw - to know this concept we need to know inheritance concept 
+
+-- TRY BLOCK SYNTAX:
+
+try
+{
+	suspected code
+} 
+catch(obj)//catch(ArithmeticException e) //need to write ExceptionName for which exception this catch block should act 
+	{
+			System.out.println("Inside ArithmeticException catch block:");
+
+	}
+	finally
+	{
+		System.out.println("Inside finally block;");
+
+	}
+
+combinations for try catch finally blocks:
+
+REFER TO EXCPETIONALHANDLING SCREENSHOT IN THE EIANTS VIDEO FOLDER
+
+- try.try = doesnt work it expects either catch block or finally block 
+- try.catch = works 
+- try.finally = works
+- finally.try =doesnt work
+- try.catch.catch  = works
+- try.try.catch = doesnt work
+- try.catch - try.catch = 2 sets of try and catch this works
+	^
+	|
+any number of combinations of "try.catch" is a valid combinations
+
+- catch.try is a invalid combinations doesnt work.
+
+excpetions are categorized into 2 types again :
+
+CHECKED EXCPETIONS:
+checked excpetions are those which we are already aware of at the compile time, complie time EXCEPTIONS
+
+UNCEHCKED EXCEPTIONS:
+are those which we see at run time, run time excpetions
+we dont know until it happened these are called UNCEHCKED excpetions.
+
+
+INHERITANCE:
+
+-- a concept of aquiring properties of one class into another class.
+
+-- "TO ACCESS THE PARENT PROPERTIES BOTH THE PARENT OBJECT AND CHILD OBJECT IS OK, 
+	BUT TO ACCESS THE CHILD PROPERTIES IT IS MANDATORY TO HAVE CHILD OBJECT only, 
+		with the parent object you cant manage."
+
+-- parent and child relationship ie.., children will be getting parents properties like anything 
+		gold, money, land, walking style, genes etc...
+-- in indian system children will have rights in parents property, 
+	but parents will not have rights in children property.
+-- the properties of parents will only be what they earned, 
+	but the property of child will be what the child earned + what their paretns earned.
+
+-- only the child need identity everytime.
+
+-- syntax: example from these two program files ParentClass.java and ChildClass.java
+
+ex: gopal son of siva
+
+-> to explain/define the relation between two classes or child class to parent class 
+	or subclass(child class) extends super class(parent class) we use "extends" keyword.
+
+-> to explain the relation between class to interface we use "implements" keyword.
+
+-> whenver we create an object, internally it calls the constructor.
+-> first it will try to execute the child class constructor,
+	 and then it will excute the parent class constructor. 
+
+-> parentobject = parentobject;
+-> if we  try to create a object for parent how many constructors it's going to call internally?
+ans: 1
+
+-> a constructor with zero  arguments is called as deafult constructor,
+	why beacuse even if we don't create a constructor,
+	 by default jvm will create an default constructor like this for us. 
+
+->childobject = childobject + parentobject;
+->if we try to create a object for child how many constructors it's going to call internally?
+ans: 2 including childs object and parents object 
+
+-> the child class always checks for available resources from itself,
+	 then it goes to parent class to fetch the necessary resources when parent also doesnt have the 
+	 resoruce then it will be a compile time error.
+
+ex: 
+	 class ChildClass extends ParentClass
+{
+	int a=100;/* its having a =100 so it takes a value from this class itself,
+				rather than getting it form parent class*/
+	
+	int add()
+	{
+		return a + b;
+
+	}
+}
+
+->There are types of inheritance:
+1) SINGLE/SIMPLE INHERITANCE:
+
+it will only have a parent class and a child class.
+
+2) MULTIPLE INHERITANCE:
+
+in this we have multiple parent classes and a single child class.
+->to achieve multiple inheritance we need one class and n number of interfaces.
+multiple inheritance: 0-1 class and 0ne to many interface's
+
+->we can have n number of interface's.
+
+can we achieve multiple inheritance in java?
+
+"MULTIPLE INHERITANCE IS NOT SUPPORTED IN JAVA,
+ BY USING PURE CLASSES IT CAN BE ACHIEVED BY USING INTERFACE'S." 
+
+3) MULTILEVEL INHERITANCE:
+
+in this we have one parent class(grandparent) and a child class(parent) and another child class(child).
+
+parent is having child, this child is having one more child
+
+diamond problem:
+
+one person can have multiple parents 
+ 
+one parent have two child and the above two child habe one parent
+
+			parent
+			^	^
+			|	|
+			child
+			 ^  ^
+			 |  |
+			parent	 
+____________________________________________________________________________________________________________________
+Nov 26th video:
+
+CREATING OF OUR OWN EXCEPTIONS:
+
+-first we need to try analyze the relation between the exceptions we have already.
+-the parent of arithmetic exception is runtime excpetion.
+- excpetion class and all it's subclasses are excpetions only.
+-all the excpetions are internally classe's only.
+- if we want to create an excpetion it has to be an class, by extending a class its becomes an excpetions class
+- EXCEPTION class is from java.lang package we dont have to write the impot package.
+-> throws is different from throw
+-> throw me raising the exception manually in the program
+
+->java.lang is deafult package for all the class files.
+
+-> throwing means ur ignoring the exception.
+-> when u dont want to terminate the program if excpetion occurred then go for the try and catch block method.
+-> if u want to simply terminate the program if exception occurs then go for throws ioexception, so that u can ignore exception and then it will teriminate the program.
+
+-> 5 key words in ioexception:
+try 
+catch
+finally
+throw
+throws
+
+IDE:
+
+-always download eclipse ide for java EE developers
+
+- eclipse
+- IntelliJ
+
+-> open soruce(which u get free of cost and also u can edit the code) is different from free(which u get free of cost).
+
+- IBM product is RAD which has more options than eclipse.
+- MyEclipse
+- NetBeans
+
+
+____________________________________________________________________________________________________________________
+
+Nov 27th video:
+
+two catch's can be written in the same catch
+syntax:
+
+catch(exception1 | Exception2)
+{
+
+} {
+
+}
+
+
+ABOUT ABSTRACT CLASSES AND INTERFACE'S:
+
+REFER TO THE CALCULATOR.JAVA, SUBCLASSONE.JAVA, MYINTERFACE.JAVA, SUBCLASSTWO.JAVA FILES 
+	FOR THE EXPLANATION OF ABSTRACT AND INTERFACES.
+ 
+-parent class and sub class 
+-parent class and child class relation is called inheritance
+-by using the super class object you can access the super class from the sub class.
+
+let's assume that a class with :
+
+float calculate(int a, int b)
+{
+	return a+b;
+}
+
+the above calculate has different sub classes.
+
+by using object we are trying to call the super class from the sub classes.
+
+obj1- class 1 object
+obj2- class 2 object
+obj3- class 3 object
+since all the classes are referring to the same method so it performs addition operation
+
+modifying super class is not encouraged when we are having multiple sub classes.
+
+
+ -eventhough when we dont have the method body in the sub class we cann call through creating object,
+  and it directly calls from the suepr class.
+
+ -we need to check what we have ourself in the child class first,
+  then we need to go to parent method.
+  
+  -we should'nt change the code in the super class.
+  
+ -when we don't want to change the super class code then,
+  we need to use method overriding and write a separate code inside the subclass which is called method overriding.
+ 
+ -writing a method with the same signature in both super class,
+  and sub class is called as method @overriding. 
+ 
+ -writing a method with the different signature,
+  but giving the same method name, this method is called @overloading.
+ 
+ -we are creating sub structures,
+  and we are expecting to execute them forcefully
+
+ -we dont have to implement the method in the sub class which we have already implemented in the super class,
+  because the method is already implemented defaultly & been calling from super class.
+  so, in order to avoid this we want the sub class to forcefully avoid this for this,
+  we dont need to write any default implementation method in the super class.
+
+***********************************************************************************
+Abstract Methods:
+
+advantage:
+Abstract classes are used to organize programs. 
+
+
+ -To avoid the default implementation of a method we need to override that in the subclass.
+ -if we are using abstract method then the class also should be abstract only
+ -ABSTRACT CLASS: a class which is defined with abstract key word is abstract class.
+ 	Abstract class can contains 0 to n number of abstract methods.
+ 	Abstract class can contain 0 to n number of non abstract methods also.
+ -ABSTRACT METHODS: Abstract method doesn't contain any body or methods with no body is called abstract methods,
+  	 and should be in anstract class only.
+  	 -abstract method cant be called directly without the method body.
+  	 -if its a static abstract method, we can call the abstract method by using class name as reference  
+  	 and if its a non static abstract method we call by using the object.
+ -you CANT CREATE AN OBJECT FOR ABSTRACT CLASSES in the same abstract class file, the compiler says "cannot instantiate the type "class name" ".  
+   if it allows to create an object then we can call the abstract method and call it in the same file itself which is not 
+   	finally, if you want create object for the abstract method, in the particular subclass then we should be able to @Override all the abstract methods. 
+   
+   	- IN ANY ABSTRACT CLASS YOU CANT CREATE AN OBJECT EITHER IT IS PARENT CLASS OR CILD CLASS.
+   WE DONT WANT TO RESTRICT THE CREATION OF OBJECT FOR CALLING OTHER NON ABSTRACT METHODS SO WE DONT USE ABSTRACT CLASS.
+
+ -when parent class (Super class) is having an abstract class then creating the child class as abstract class doesnt let you create object, 
+	- being a child class its child class responsibility to fulfill parent class'es needs, 
+		it's not mandatory to fulfill all the needs if you can do that u then u need to or else u have to let them know that, doing nothing is not fair. 
+
+ -abstract classes can contain 0 to n number of abstract methods and also non abstract methods also.
+ -what happens when we call an abstract method without body?
+ 	ans: compiler will avoid all the ways of calling the abstract method.
+ -if its a static we use class name for calling the method
+ -if its a non static we use object for calling the method.
+ -if we are not provide method body in super class, then we can provide abstract method body in the sub class.
+
+
+Interface:
+interface :
+		- interface is like class only but in interface we only have structure here.
+	- interfaces are mainly used in multiple inheritances.
+ -if we have to use multiple inheritance then we have to use interfaces.
+ -So, in the single level the maximum number of classes that you can use is only one and  the interfaces can be any number.
+
+ when we have to use abstracts class and when we have to use interfaces?
+
+ -interfaces can have only abstract methods, there will be no normal methods concepts here.
+ -by default all the methods we write in the interface class are always abstract methods.
+ 		-we don't have give "abstract" keyboard here because we already gave abstract method in the parent class, even if we give also it doesnt matter.
+ 		ex:
+ 		public interface MyInterface 
+ 		{
+
+				abstract boolean login();/*e don't have give "abstract" keyboard here because we already gave abstract method in the parent class, 
+											even if we give also it doesnt matter.*/
+				float calculate();
+	
+		}
+	
+ -instead of class we give interface while creating interface file.
+ -ex:
+	public "interface" MyInterface{
+	}
+	
+	*/
+ -interface doesnt suppport static and object creation.
+ -if it is supporting static and object creation.
+  	by using the static and object creation we call the other methods, if it supports these functionalities.  
+  		to avoid these functionalities only it's not supporting static and object creation.
+ -there's no non abstract methods in "interface",
+ - the complete interface is like a strutcutre(means like a blue print) like a design if u want to make use of it,
+ 		to implement it we have to create another subclass and add the structures there
+ 		you have to implement the structure in the another subclass , if u have to implement the structure you have to use the key word "implements" like you use "extends".
+
+ -to implement the abstract class and abstract methods in the interface we have to use abstract class while implementing the interface.
+  
+  2 ways :
+
+  1) implementing those methods in the new subclass 
+  2) make the subclass of interface as abstract class 
+
+	ex:
+
+public class SubClassTwo "implements" MyInterface
+{
+	//1st way implementing those methods in the new sub class which is SubClassTwo 
+	@Override
+	public boolean login() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public float calculate() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
+}
+
+_____________________________________________________________________________________________________________________________________________________________________________
+
+Nov 29th video:
+
+whats the exact difference between abstract classes and interface ?
+
+interface's have no implemented methods and abstract classes have implemented methods and unimplemented methods.
+
+
+what is called as unimplemented methods?
+
+and: A method which doesnt contain any body or body declaration,
+		 these unimplemented methods are called abstract methods. 
+
+interface's will contain only abstract methods and 
+
+abstract classes can contain both abstract methods and non abstract methods.
+
+if we want to define the relationshio betweem two class'es we use the keyword "extends".
+
+today:
+we will try to create couple of abstract classes and interfaces.
+
+we will try to find what's the behavior of the member!!
+
+we didnt find about the constructor behavior in the abstract classes and interfaces, we are not sure it will support constructors or not?
+  so let's add some constructors and some instance variables with in these abstract classes and interfaces 
+
+let's go instance variable's and constructors:
+
+in MyInterface.java:
+
+we can only create instance variable since, there's no method body to create local variable.
+so we only have to create instance variable.
+
+
+super class & Sub Class:
+
+- we can store sub class object in the super class reference(child can act as a parent)
+- we can't store parent object with in the child object.(parent can't take child properties)
+
+	SubClassOne sOne = null;
+	Calculator calc = null;
+	
+	calc = sOne;//storing sub class in the super class can be done.
+	sOne = calc;//storing super class in the sub class can't be done
+
+
+In Interface:
+
+	- we can call this in another subclass by using MyInterface.a .
+	    	since it's static we need to have static method there in sub class.
+	started at 1250 pm
+	
+	only instance variable, can't create local variable becos there's no method body to create local variable
+	if its  a non static instance variable we have to create a object to call it, but we can't create an object in interfaces.
+	So, now how to access this w/o creating object in the interface? by implementing it in the another class.
+
+	 * first we need to find the structure of the class, 
+	 * to find the structure of the class we need to do it in the cmd prompt and access it using command javap "Filename".
+	 * internally int a= 10; it's mentioned as public static final int a;
+	 * public means we can access the method or variable or class anywhere
+	 * static means w/o creation of the class or object we can access the property. 
+	 * 			which mean i can directly give MyInterface.a
+	 * final means that's it it is final, we can't change it it means it acts like a constant.
+	 * 
+	 * So, when u r creating instance variable in the interface by default
+	 * 			 all the instance variables are going to be public static final. So, u can't change them.
+	 * 
+	 * coming to methods, internally by default all the methods we create in the interface are going to change to public abstract.
+
+In abstract class:
+	 * 
+	 * if it's abstract method we need to add abstract key word and there can't be any body
+	 * if it's non - abstract method don't need to add abstract key word and we have to add body
+	 *
+	 * note: whatever changes we make even the minor one's the eclipse will be compiling the program internally always.
+	 *in bin folder we get the auto compiled program only.
+	 * 
+	 *
+	 * when we give instance variable in the abstract class:
+	 *  when we check the structure of the abstract class file in the cmd prompt, 
+	 * 		we find there are no additional keywords attached to it like they were added in the interface file 
+	 * 			ex: final, static , public
+	 *  	
+	 * In the abstract class when we declare a variable as final,
+	 * 	 	then we cannot increment that(means Calling) variable inside the normal method using "this" keyword, because it wont allow any kind of editing. 
+	 * ex: public abstract class Calculator{
+	 *  final int a=10;
+	 *   float calculate(inta, int b)
+	 * 	{
+	 * 		S.o.p("Inside calculator.calculate()");
+	 * 		this.a++;
+	 * 		return a+b;
+	 * 	}
+	 * }
+	 *  normally, we can call the variable using this."VariableName", but the variable has been declared as final so we can't change it or edit it.
+	 * 
+	 * static : if u don't want to create an object to access any property of a class then u have to use static
+	 * 			suppose if u want to use instance variable inside the the static method then
+	 * 			 we use static keyword for the instance variable and make it available for the static method for calling using the class name as reference.
+	 * 
+	 * final: you just can't edit it inside the method when calling it.
+	 * 
+	 * for methods also we can use final variable and for classes also we can use final variable.
+	 * 
+	 * when your'e using "final" for the method then it can't be changed or edited anywhere else like when calling it in the sub classes or anywhere else,
+	 * 	 except it can be changed or edited in the same class file where final has be declared.
+	 *  ex:
+	 *  
+	 *  final float calculate (int a , int b)//float method
+	 *  when creating final method it will allow u to change anything only here in this class file and in this code. 
+	 *	{
+	 *	System.out.println("Inside Calculator.calculate()"); //we wrote calculate() to mean calculate method
+	 	int  c = a+b;
+	 	return c;
+		}
+
+	  - the intention of using abstract keyword is we used abstract to implement it later but not right now.
+	  
+	  - abstract and final keywords can't be used together.
+	  - abstract and static keywords also can't be used together.
+	  
+	  - abstract class can't be final because is incomplete, because the methods are not complete in the other sub classes.
+	  
+	  - the class can be either abstract or final it can't be both, So final class can't be used for abstract class.
+	  
+	  - final can't be used even for abstract methods also,
+	  
+	  		int a =10;
+	 		float b = 20;
+	    we can't store value of b in a 
+	    we can store value of a in b, because the float value is bigger than int value.
+	  
+
+
+	   CollectioFrameWork:
+	  
+	  collection is nothing but a group of elements.
+	  what are the draw back s of array?
+	  ans: arrays store single data type
+	  		arrays size is not dynamic, means once u declare an array u can't increase the size or u can'tshrink the size.
+	   
+	   by considering the drawbacks of arrays they came up with collection frame work:
+	   
+	   collection is nothing but a group objects,
+	    it will only store objects within the collection object,
+	    	it can't store primitive data types(character, float, int, long) values.
+	  
+	  collection will only store a group of objects with in the collection object .
+	  
+	  if you go one time you have to get the data in a single chunk itself.
+	  
+	  when in a network or any communication you have to pass some data, 
+	  		you will grouping the data together and sending the grouped object only.
+	  
+	  ex:
+	  obj1 
+	  obj2
+	  obj3
+	  obj4 
+	  we have 4 objects and we need to move all of them from one place to another place or from one class to another class.
+	  	instead of sending obj1 once, obj2 next and obj3 in the third iteration, obj4 in the fourth iterations, 
+	  		we can be wrapping everything together by using the collection object,
+	 			so in this collection object you will be adding obj1, obj2, obj3, obj4 
+	 				now by adding all these four object this will become a single collection object
+	 					you'll be moving this single collection object to another place might be a java program or network transfer
+						So, now whoever receives this collectiong object will be fetching the data from this single collection object itself.
+	 	
+	 		-this same thing can be done with arrays also, but using arrays all the objects your keep in the array
+	 			 should only be a single data type.
+	 		-but coming to collection here like, you can give a collection of data types also. 
+	 			it's not mandatory to use a single data type you can keep different data types under one single object 
+	 				and send it anywhere you want or the other party.
+	 
+	  		-Here different data types means not only the "primitive data types, A class can also be considered as a data type 
+	  
+	  advantages of collection frame work is:
+	 * 
+	 * 1) if u want to add one more element you can add one more element to the single collection object set.
+	 * 		you can also remove objects if you don't want.
+	 * 2) it will be supporting multiple data types.
+	 * 
+	 * we can group the entire collection object into four interfaces here, 
+	 * 		one single interface can have multiple implementation classes,
+	 * 			based on the implementation classes we will be using them or dividing them based on our requirement.
+	 * 
+	 * 
+	 * 		interfaces 				|	implementation classes
+	 * 	_______________________________________________________________________
+	 * 			Set	interface has 	|			hashSet as implementation classes
+	 *								|
+	 * 								|
+	 * 			List	||			|			LinkedList
+	 *								|			ArrayList
+	 * 								|
+	 * 			Queue	||			|			LinkedList
+	 * 								|
+	 * 								|
+	 * 			Map		||			|			HashMap
+	 * 								|
+	 * 
+	 * LinkedList is a multiple inheritance becos it's having List and Queue as parents classes
+	 * 
+	 * 
+	 * set/queue/list/map the purpose is we have to use them for grouping the elements only, 
+	 * 		depending on the requirements we will be using whether to go for set or map or queue or list.
+	 * 
+	 * Now, Set is a group of elements where it won't support duplicates means ex: 123 then size of set is three 
+	 * 					then again if u r adding 3 or 2 it wont be increasing the size, but instead it will be overriding with the previous value only.
+	 * 
+	 * Now, List is a group of elements / collection of objects but this supports duplicate elements.
+	 * 	ex: if we add 123 now the size is 3 and again if we add 1 then the size will be increasing to four.
+	 * 
+	 * Now, Queue will be using internally first in first out(FIFO) mechanism.
+	 * 
+	 * Now, Map will be expecting "keys" and "values" pair where key should be unique and values can be duplicated.
+	 * 			basically, key is like a identifier and value can be duplicates.
+	 *				keys is like set and values are like List 
+	 *
+	 *def: an object that maps keys to values. a map contains duplicate keys, each key can map to at most one value.
+	 *
+	 * Note: all these classes and interfaces belong java.util package.
+	 * 
+
+	 	we don't create any variables with any access specifiers.
+	 * access specifiers : public, private, protected, default
+	 * 			default is not a keyword, default is default only we don't use it as keyword.
+	 * 			most of the time we will create with "private" only.
+	 * 	we should mention the type of access specifiers then only it will be applicable
+	 * 	ex: if u use public then only it will be public
+	 * 		if u use private then only it will be private
+	 * 		if u use protected then only it will be protected 
+	 * 		if u don't give anything it will be default access only providing default access only.
+	 * 		
+	 *-the particular class with only getter and setter methods is called "bean class",
+	 *		in this particular class we only write a few variables and getter and setter methods that's all.
+	 *
+	 *-in this bean class whenever your'e creating an instance variable we need to use private as access specifier.
+	 *- if private is given this particular variable cannot be accessed outside, 
+	 *			but still if u want to access the name variable outside we can make use of our public methods get"variablename" and set"variablename" methods.
+	 * 
+	 *- if u want to set go for calling set"variablename" methods. 
+	 *- if u want to go for getting the value  go for calling get"variablename" methods.
+	 *
+	 *if you don't give private access specifiers for the variable then u can use the variables directly without using get and set methods.
+	 *		So, to avoid calling directly we are giving private access specifier
+	 
+
+-to initialize the instance variables we can use constructor method. you can create an object and call the object.
+		if you don't want to use constructor method to initialize these instance variables,
+				we can use the method called setter method. */
+		
+-setter method -> whatever we have written in between constructor the same thing we will be dividing into different methods
+		format: 
+		public int getAge() {//all the getter methods depends on the data type(which data type they are returning)
+		return age;
+	}
+	public void setAge(int age) {//all the setter methods are with the return type void, because we are setting here not returning anything
+		this.age = age;
+	}
+
+ex:
+
+import java.util.HashMap;
+
+public class Application {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//now we are creating map<k,v> object
+		HashMap<String,Student> map = new HashMap<String,Student>();
+		we are replacing v with Student here why because the type of values, 
+		 * 	which i am  going to deal in my example is student class objects, 
+		 * 		we just mentioned the type of object name here the type is nothing but student 
+		 * we need to consider that even the class acts as a data type internally.
+		 * since, we string keys we change the k as String
+		 * 
+		 * ctrl+shift+o is for organizing java.util packages.
+
+		 * 	now after creating hash method object, now need to store or keep some data with in the map,
+		 * 		now we need to find couple of methods to add or store the data
+		 * 			the names for adding or storing the data is "put, store, add" to search them in the java api documentation.
+		 *  
+		 *  put(K key, V value) - to store or add 
+		 *  
+		 *  Now we need to create methods which gives student object (means student class object).
+		 *  	ex:if it is going to give integer object we need to make the return type as integer.
+		 *  		same way since, when it's returning student object we need to make the return type as student.
+		 *  
+		 *  key should be unique, even though if u use the same key for another value its gonna override the previous value
+		 *  
+		 *  Now, to call the create student method again i have to create the different different students object by passing the three parameters for the application class, 
+		 *  	just to avoid that we are making the below student method as static. 	
+		 *  		this is just for our convenience.
+		 * 
+		 *  we have created the map variable here only with in the main method so which means your'e creating the variable and 
+		 *  	using it in the same method both things are happening in the static context only.
+		 *  
+		 
+		//now, we are trying to store the createstudent parameters in the st1 variable and we are passing the three parameters we are not using object or classname as reference
+		Student st1 = createStudent("name1","address1", 26);
+		Student st2 = createStudent("name2","address2", 26);
+		
+		 we r not using create student object or classname as reference, we can use this directly when this is in the same class, 
+		 * 		but when it is in different class we can't call it directly and also it will be checking in the current class only, 
+		 * 			so when we are calling outside this same class we need to call using "classname.createStudent".
+		 * 
+		 * Now, we have to add  the above two objects st1 and st2 with in the map, 
+		 * 		to the add data to the map the method we have seen is "put(K key, V value)" in this we replaced k with string and v with student here.
+		 * 			so now when we try to call map.put it's gonna show us string, student.
+		 * 
+		 * Here internally, put method is non static method, but we are still able to use it here because we are not only using put method directly, 
+		 * 		for calling that method we are calling it with object(map is the object) now.
+		 *  		thats why it's working now, if your'e not using object and ur trying to call it directly it's not gonna work it's gonna throw an error.
+		 *  
+		 * if the method is not in the static context but the method your'e trying to call is combined with the static context object it will work without errors. 
+		 * ex: map.put(K Key, V value), put is a non static method but map object is a static variable sp if u combine these two it will work.
+		 *  
+		 *  static variables can't be created within the method, you can only create in class levels only.
+		 *  
+		 *  
+		 *  
+		 
+		map.put("ID1",st1);//key value as ID1 and value as st1 which we stored the parameters in the above create student
+		map.put("ID2",st2);
+		//map doesn't support duplicate values in the key , if u give duplicate value its gonna override the old one and keep the new value.
+		 
+		 	now we need to fetch the data form the map above and  read the objects here, 
+		 * 		we need to check what are all the method it supports for fetching the data.
+		 * 			method: map.get()
+		 * 
+		 
+		Student st = map.get("ID2");//storing the data in a variable st 
+		System.out.println("Name:" + st.getName());//displaying the  value
+		System.out.println("Address:" + st.getAddress());
+		System.out.println("Age:" + st.getAge());
+		
+	}
+	
+	//Student method
+	static Student createStudent(String name, String address, int age)//based on the 3 values we are preparing the student object 
+		//here, create student is method of this particular class only if u have to call it outside this class you need to use"MyApplication.createStudent" 
+		//since create student is also static method, we are able to call it in the above static main function.
+		{
+			Student st = new Student();//creating student object 
+			//calling all the setter methods
+			st.setName(name);//passing name
+			st.setAddress(address);//passing address
+			st.setAge(age);//passing age
+			return st;//returning the student class object here
+		}
+		
+	}
+
+___________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Nov 30th video:
+
+
+whats the difference between linked list and array list ?
+
+if there are any multiple implentation classes  either linked list or array list will be synchronized the other one is not synchronized.
+
+its matter of order: one will be following the order the other may not be following the order.
+
+
+ex: for file system  program 
+				|
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class ReadFile {
+	
+	public static void main (String args[]) throws IOException
+	{
+		FileInputStream fis /*fis is the object*/ = new FileInputStream("/Users/saigopal/Documents/javapractice/BasicCalc.java");
+		 
+		/*when the string contains invalid escape or valid escape characters,
+		 *		instead of giving backward slash you can use forward slash or you can also give two backwards slashes "\\".
+		 * Now, we need to read the file to display the output to do that we have to use read().
+		 * to close fis we use "fis.close"
+		 */
+		
+		int size = fis.available();
+		
+		/* the below code for reading by iterating multiple no. of times
+		 * 
+		for (int i =0; i<size; i++)
+		{
+			int a = fis.read();//assigning a  variable to the read method.
+			System.out.print((char)a);//for converting integer value to character value.
+				//to print in the same line we removed ln in println 
+		}
+		fis.close();
+		*/
+		
+		
+		//for reading data at a single shot
+		byte data[] = new byte[size];
+		fis.read(data);
+		String fileContent = new String(data);
+		System.out.println(fileContent);
+		
+		
+		}
+		
+	}
+ *  
+ * after one hour:
+ * 
+ * file system: refer to FileRead.java , FileWrite.java files for more information.
+ * 
+ * to read from the file and to write to the file.
+ * 
+ * fileinputstream and filereader  are both recommended for reading a file.
+ * 
+ * ex: to read ur resume or any other text file.
+ * 
+ * FileInputStream(String name) : method is the easy way to call a file .
+ * 
+ * convert and integer value to character you can directly give "(char)" .
+
+ 	so, it doesn't matter if your'e using FileInputStream(reads byte arrays) or FileReader(reads character arrays),
+ * 		 FileOutputStream(reads byte arrays) or FileWriter(reads character arrays).
+ * 
+ 	we have total two sets of files one will be reading byte arrays and the other one will be reading character arrays.
+ * 
+ * 
+ 	internally if we have any huge contextual data to read then we have to go for filereaders and filewriters.
+
+ex:
+
+ import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+/**
+ * 
+ */
+
+/**
+ * @author saigopal
+ *
+ */
+public class WriteFile {
+
+	/**
+	 * @param args
+	 */
+	public static void main (String args[]) throws IOException
+	{
+		
+		int value = 10;
+		FileInputStream fis /*fis is the object*/ = new FileInputStream("/Users/saigopal/Documents/workspace/cake.jpg");
+		 
+		/*when the string contains invalid escape or valid escape characters,
+		 *		instead of giving backward slash you can use forward slash or you can also give two backwards slashes "\\".
+		 * Now, we need to read the file to display the output to do that we have to use read().
+		 * to close fis we use "fis.close"
+		 */
+		
+		int size = fis.available();
+		
+		/* the below code for reading by iterating multiple no. of times
+		 * 
+		for (int i =0; i<size; i++)
+		{
+			int a = fis.read();//assigning a  variable to the read method.
+			System.out.print((char)a);//for converting integer value to character value.
+				//to print in the same line we removed ln in println 
+		}
+		fis.close();
+		*/
+		
+		
+		//for reading data at a single shot
+		byte data[] = new byte[size];
+		fis.read(data);
+		String fileContent = new String(data);
+		//fileContent = fileContent.replace("StringtoReplace", ""+10);//for replacing a particular old value into a give new value for the output file.
+		
+		FileOutputStream fos = new FileOutputStream("/Users/saigopal/Documents/javapractice/OutPut.jpg");
+		//for writing the contents of the file to a new file
+		//we are trying to copy byte to byte from one file to the another one.
+		//fos.write(fileContent.getBytes()); //this works only for text and doesn't work for pictures
+	
+		fos.write(data);//this works for copying or reading and writing the pictures also
+		fos.close();
+		
+		System.out.println(fileContent);
+		fis.close();
+		
+		
+		}
+		
+
+}
+
+ so, it doesn't matter if your'e using FileInputStream(reads byte arrays) or FileReader(reads character arrays),
+ * 		 FileOutputStream(reads byte arrays) or FileWriter(reads character arrays).
+ * we have total two sets of files one will be reading byte arrays and the other one will be reading character arrays.
+ * 
+ * internally if we have any huge contextual data to read then we have to go for filereaders and filewriters.
+
+
+_____________________________________________________________________________________________________________________________________________________________________________ 	__________________________________________________________________________________________________________________________________________________________________________
+ 
+Dec 2nd video:
+
+Networking:
+
+the communication and connection between multiple machines.
+
+internally, each and every domain is runned from a server, 
+		if you want to access that we need the ip address of that machine.
+
+masking of ip addresses with names is called host names or domain names.
+
+ip addresses are referring to Inet4Addresses and Inet6Addresses in java which helps us in fetching ip address.
+
+String hostname;
+Inet4address 
+
+ex: of a method name
+
+public class FindHost {
+	String hostname = "www.google.com";
+	InetAddress ip = InetAddress.getByname(hostName);
+	System.out.println(ip.);
+}
+
+Inet4address xyz(String)
+
+
+
+//java program to get the ip address of given website name
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+public class FindHost{
+	public static void main (String args[])  throws UnknownHostException {
+		
+	//String hostName = "www.google.com";
+	InetAddress ip = InetAddress.getByName("www.facebook.com");
+	System.out.println(ip.getHostAddress());
+	
+	//ip.getHostAddress() -> return s the ip address string in textual representation
+	
+	}
+
+}
+
+ *we can't find multiple applications on a single port number
+ * 
+ * client should know the servers ip address and port number.
+ * 
+ * we should create an ouput channel for server and input channel for input
+ * 		port number will be acting like a communication channel,
+ * 		 	entry point or exit point for the particular channel
+ * 
+ * if your'e creating an object for the class it will be calling the constructor internally.
+ 
+
+
+ import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class Server {
+	
+	public static void main (String args[]) throws IOException
+	{
+		ServerSocket ss = new ServerSocket(1099);
+		System.out.println("trying to connect..");
+		Socket s = ss.accept();//listens for a connection to be made to this socket and accepts it.
+		System.out.println("Connected!!!");//we will get this msg after getting connected  
+		//u shld msg from the socket , entire communication will happen only in socket.
+		
+		//from the socket we are trying to get the output stream, this is sockets outputstream
+		OutputStream os = s.getOutputStream();//outputstream is for sending something out from this particular server .
+		//after we get the outputstream we need to attach this to the printstream object
+		//this OutputStream is not a normal outputstream, we are getting this one from the socket.
+		PrintStream out = new PrintStream(os);//creating printstream object and passing output stream through it. 
+		
+		//this out.println() is going to send the message to the above outputstream 
+		//out.println("hi how are you?");
+		
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br= new BufferedReader(isr);
+		
+		String msg= "";
+				while (  !(msg = br.readLine()).equals("exit") )
+				{
+					out.println(msg);
+				}
+		s.close();
+		ss.close();
+	}
+
+}
+
+
+
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.Socket;
+
+public class Client {
+	public static void main (String args[]) throws IOException{
+		Socket s = new Socket("localhost", 1099);
+		/*creating socket object , inside passing host name and port number,
+		 * 		local host means it's in the same machine.
+		 * 
+		 * 
+		 * 
+		 */
+		 InputStream in = s.getInputStream();
+		 InputStreamReader isr = new InputStreamReader(in);
+		 BufferedReader br = new BufferedReader(isr);
+		 
+		 String msg = "";
+		 while((msg = br.readLine() )!= null)
+			 /* it will be keep on calling the readLine(),if there's something in the readLine() it and it stores the value in msg variable 
+			  * 	if the msg is null it will come out of the loop,
+			  * 		 if not it will execute the print statement.
+			  */
+		 
+		 {
+		
+		 System.err.println("from server " +msg);
+		 }
+		 
+		s.close();//closing the socket connection. 
+		
+	}
+
+}
+
+

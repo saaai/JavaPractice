@@ -1,0 +1,17 @@
+Twitter BootStrap
+
+what is twitter bootstrap?
+-Twitter bootstrap means its a front end framework, it's using the client not the server.
+-Specifically used for UI s and themes design what an user sees and uses in the webiste or 	
+	application.
+-Includes bits of code in html/css/javascript.
+-Bootstrap is used for building responsive, mobile first(working with the smaller screens first 	and working upto larger screens next) web applications and websites.
+-Most popular framework in its type by far foundation is pretty popular as well but nowhere as 
+		popular as bootstrap is.
+
+why use bootstrap and other frameworks at all why not just use HTML and CSS ?
+-Increase development speed(main reason for using this framework), not just for any kind of framework, but any kind of framework php and javascript. 
+-With bootstrap all you helper classes, alignments these are all done for us. We may need to do some tweaking but for most part it will do we just need to add the classes for html.
+-Responsiveness, instead of custom media greeting from the scratch we can simply use the grid system and we will have a mobiel friendly website/application.
+-Consistency, with class name, style, markup keeps our website and theme very consistent.
+-
